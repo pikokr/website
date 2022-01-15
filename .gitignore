@@ -37,3 +37,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 /.idea
+
+
+# Contentlayer
+.contentlayer

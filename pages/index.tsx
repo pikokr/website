@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 const Home: NextPage = () => {
-  return <div>asdf</div>
+  return <div className="mt-8 container mx-auto">asdf</div>
 }
 
 export default Home

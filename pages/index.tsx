@@ -39,6 +39,21 @@ const Home: NextPage = () => {
           KimuSoft
         </a>
       </div>
+      <div className="mt-20 text-3xl font-bold">More About Me</div>
+      <div className="grid grid-cols-3 gap-4">
+        <div className="bg-black bg-opacity-20 p-6 rounded-lg shadow-lg">
+          <div className="text-3xl font-bold">Rhythm Games</div>
+          <div className="text-xl mt-2">My favorite game genre is rhythm game. I play ADOFAI, osu, etc...</div>
+        </div>
+        <div className="bg-black bg-opacity-20 p-6 rounded-lg shadow-lg">
+          <div className="text-3xl font-bold">Cute things</div>
+          <div className="text-xl mt-2">I love cute things!!!</div>
+        </div>
+        <div className="bg-black bg-opacity-20 p-6 rounded-lg shadow-lg">
+          <div className="text-3xl font-bold">And More...</div>
+          <div className="text-xl mt-2">If you want to know more about me, please join discord and ask!</div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -5,12 +5,15 @@ import { GetStaticPaths } from 'next'
 import TimeIcon from '../../assets/icons/time.svg'
 import dayjs from 'dayjs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
 type StaticProps = {
   post: Post
 }
 
 const PostView: React.FC<StaticProps> = ({ post }) => {
+  const MDXContent = useMDXComponent(post.body.code)
+
   return (
     <div className="container mx-auto mt-8">
       <div className="text-4xl">{post.title}</div>
@@ -24,6 +27,9 @@ const PostView: React.FC<StaticProps> = ({ post }) => {
           <FontAwesomeIcon icon={['fas', 'calendar']} />
           {dayjs(post.date).format('YYYY-MM-DD')}
         </div>
+      </div>
+      <div>
+        <MDXContent />
       </div>
     </div>
   )

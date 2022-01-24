@@ -3,7 +3,8 @@ import type { AppProps } from 'next/app'
 import Layout from '../components/Layout'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-library.add(fab)
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, fas)
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

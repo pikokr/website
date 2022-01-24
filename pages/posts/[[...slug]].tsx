@@ -2,13 +2,31 @@ import React from 'react'
 import { Post } from '.contentlayer/types'
 import { allPosts } from '.contentlayer/data'
 import { GetStaticPaths } from 'next'
+import TimeIcon from '../../assets/icons/time.svg'
+import dayjs from 'dayjs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type StaticProps = {
   post: Post
 }
 
 const PostView: React.FC<StaticProps> = ({ post }) => {
-  return <div>{post.title}</div>
+  return (
+    <div className="container mx-auto mt-8">
+      <div className="text-4xl">{post.title}</div>
+      <div className="flex mt-1 opacity-60 gap-4">
+        <div className="flex gap-2 text-xl items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={TimeIcon.src} alt="" draggable="false" />
+          {post.readingTime}
+        </div>
+        <div className="flex gap-2 text-xl items-center">
+          <FontAwesomeIcon icon={['fas', 'calendar']} />
+          {dayjs(post.date).format('YYYY-MM-DD')}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default PostView

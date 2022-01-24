@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         />
         she/her
       </div>
-      <div className="flex select-none gap-2">
+      <div className="flex select-none gap-2 flex-wrap">
         <a href="https://github.com/pikokr" rel="noreferrer" target="_blank" className="flex text-xl gap-2">
           <FontAwesomeIcon className="text-2xl" icon={['fab', 'github']} />
           GitHub
@@ -33,14 +33,20 @@ const Home: NextPage = () => {
           YouTube
         </a>
       </div>
-      <div className="text-xl">
-        Working in{' '}
-        <a href="https://github.com/kimusoft" className="border-b" rel="noreferrer" target="_blank">
-          KimuSoft
-        </a>
+      <div className="flex gap-4 flex-wrap">
+        <div className="text-xl whitespace-nowrap">
+          Volunteering in{' '}
+          <a href="https://github.com/adofai-gg" className="border-b" rel="noreferrer" target="_blank">
+            Adofai.GG
+          </a>{' '}
+          and{' '}
+          <a href="https://github.com/kimusoft" className="border-b" rel="noreferrer" target="_blank">
+            KimuSoft
+          </a>
+        </div>
       </div>
       <div className="mt-20 text-3xl font-bold">More About Me</div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="bg-black bg-opacity-20 p-6 rounded-lg shadow-lg">
           <div className="text-3xl font-bold">Rhythm Games</div>
           <div className="text-xl mt-2">My favorite game genre is rhythm game. I play ADOFAI, osu, etc...</div>

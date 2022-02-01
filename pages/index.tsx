@@ -68,36 +68,32 @@ const Home: NextPage = () => {
         </div>
       </div>
       <Marquee gradient={false} speed={64} direction="left">
-        <div className="flex gap-4 mt-4 mr-4">
-          {projects.map((x, i) => (
-            <a
-              href={`https://github.com/${x.repo}`}
-              rel="noreferrer"
-              target="_blank"
-              key={i}
-              className="p-4 rounded-md shadow-lg bg-black bg-opacity-20 hover:bg-opacity-30 transition-all hover:-translate-y-2"
-            >
-              <div className="text-xl font-bold">{x.name}</div>
-              <div>{x.description}</div>
-            </a>
-          ))}
-        </div>
+        {projects.map((x, i) => (
+          <a
+            href={`https://github.com/${x.repo}`}
+            rel="noreferrer"
+            target="_blank"
+            key={i}
+            className="p-4 rounded-md shadow-lg bg-black bg-opacity-20 hover:bg-opacity-30 transition-all hover:-translate-y-2  mr-4 mt-2"
+          >
+            <div className="text-xl font-bold">{x.name}</div>
+            <div>{x.description}</div>
+          </a>
+        ))}
       </Marquee>
       <Marquee gradient={false} direction="right" speed={64}>
-        <div className="flex gap-4 mt-4 mr-4">
-          {projects.map((x, i) => (
-            <a
-              href={`https://github.com/${x.repo}`}
-              rel="noreferrer"
-              target="_blank"
-              key={i}
-              className="p-4 rounded-md shadow-lg bg-black bg-opacity-20 hover:bg-opacity-30 transition-all hover:-translate-y-2"
-            >
-              <div className="text-xl font-bold">{x.name}</div>
-              <div>{x.description}</div>
-            </a>
-          ))}
-        </div>
+        {projects.map((x, i) => (
+          <a
+            href={`https://github.com/${x.repo}`}
+            rel="noreferrer"
+            target="_blank"
+            key={i}
+            className="p-4 rounded-md shadow-lg bg-black bg-opacity-20 hover:bg-opacity-30 transition-all hover:-translate-y-2 mr-4 mt-2"
+          >
+            <div className="text-xl font-bold">{x.name}</div>
+            <div>{x.description}</div>
+          </a>
+        ))}
       </Marquee>
     </div>
   )

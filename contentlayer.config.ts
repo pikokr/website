@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 pikokr. Licensed under the MIT License.
+ */
+
 import { defineDocumentType, makeSource, ComputedFields } from 'contentlayer/source-files'
 import readingTime from 'reading-time'
 import rehypeSlug from 'rehype-slug'

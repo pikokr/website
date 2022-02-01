@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 pikokr. Licensed under the MIT License.
+ */
+
 /// <reference types="next" />
 /// <reference types="next/image-types/global" />
 

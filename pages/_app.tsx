@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 pikokr. Licensed under the MIT License.
+ */
+
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Layout from '../components/Layout'

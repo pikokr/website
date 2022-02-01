@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 pikokr. Licensed under the MIT License.
+ */
+
 export type Project = {
   name: string
   repo: string

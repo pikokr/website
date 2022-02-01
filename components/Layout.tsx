@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 pikokr. Licensed under the MIT License.
+ */
+
 import React from 'react'
 import Header from './Header'
 

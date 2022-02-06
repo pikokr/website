@@ -32,7 +32,7 @@ const PostView: React.FC<StaticProps> = ({ post }) => {
           {dayjs(post.date).format('YYYY-MM-DD')}
         </div>
       </div>
-      <div>
+      <div className="pt-2">
         <MDXContent />
       </div>
     </div>

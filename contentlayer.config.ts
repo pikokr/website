@@ -7,7 +7,7 @@ import readingTime from 'reading-time'
 import rehypeSlug from 'rehype-slug'
 
 const postComputedFields: ComputedFields<'Post'> = {
-  readingTime: { type: 'string', resolve: (post) => `${Math.ceil(readingTime(post.body.raw).minutes)} min` },
+  readingTime: { type: 'string', resolve: (post) => readingTime(post.body.raw).text },
 }
 
 export const Post = defineDocumentType(() => ({

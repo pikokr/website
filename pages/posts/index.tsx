@@ -15,7 +15,7 @@ const PostList: React.FC = () => {
         <div className="text-3xl font-bold">Posts</div>
         <div className="flex flex-col gap-4 mt-4">
           {[...allPosts].map((x: Post, i) => (
-            <Link href="/posts/[...slug]" as={`/posts/${x._raw.flattenedPath}`} key={i} passHref>
+            <Link href={'/posts/[...slug]'} as={`/posts/${x._raw.flattenedPath}`} key={i} passHref>
               <a className="flex gap-2" onDragStart={(e) => e.preventDefault()}>
                 <div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}

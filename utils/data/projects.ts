@@ -8,170 +8,22 @@ export type Project = {
   description: string
 }
 
-export const projects: Project[] = [
+const p = [
   {
     name: 'Command.TS',
     description: 'A comamnd framework for discord.js typescript',
     repo: 'pikokr/command.ts',
   },
   {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
+    name: 'Jejudo',
+    description: 'A debugging tool for discord.js, inspired by dokdo',
+    repo: 'pikokr/dokdo',
   },
   {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
-  },
-  {
-    name: 'Command.TS',
-    description: 'A comamnd framework for discord.js typescript',
-    repo: 'pikokr/command.ts',
+    name: '트위치 초성퀴즈',
+    description: 'quiz minigame for Twitch with customizable words',
+    repo: 'paringparing/twitch-chosung',
   },
 ]
+
+export const projects: Project[] = [...p, ...p, ...p]

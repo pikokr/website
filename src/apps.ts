@@ -18,13 +18,14 @@ export const apps = [
     height: 210,
     content: async () => (await import('./windows/About.vue')).default,
   },
-  // {
-  //   name: 'Projects',
-  //   title: 'Projects',
-  //   icon: ['fas', 'list'],
-  //   width: 100,
-  //   height: 100,
-  // },
+  {
+    name: 'Projects',
+    title: 'Projects',
+    icon: ['fas', 'list'],
+    width: 300,
+    height: 400,
+    content: async () => (await import('./windows/Projects.vue')).default,
+  },
   // {
   //   name: 'Contact',
   //   title: 'Contact',

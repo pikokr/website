@@ -2,7 +2,9 @@
   <div class="container">
     <div
       v-for="i in apps"
-      class="flex flex-col items-center w-20 h-20 justify-center"
+      class="flex flex-col items-center w-20 h-20 justify-center gap-2"
+      :key="i.index"
+      @click="openWindow(i.index)"
     >
       <font-awesome-icon
         :icon="i.icon ?? ['fas', 'window-maximize']"
@@ -14,7 +16,30 @@
 </template>
 
 <script setup lang="ts">
-import { apps } from '../apps'
+import { apps as appList } from '../apps'
+import { useMainStore } from '../store'
+import { storeToRefs } from 'pinia'
+
+const apps = appList.map((x, i) => ({ ...x, index: i }))
+
+const windowsStore = useMainStore()
+
+const { windows } = storeToRefs(windowsStore)
+
+const openWindow = (id: number) => {
+  const idx = windows.value.findIndex((x) => x.id === id)
+  let data
+  if (idx > -1) {
+    data = windows.value.splice(idx, 1)[0]
+  }
+  windows.value.push(
+    data ?? {
+      x: document.body.clientWidth / 2,
+      y: document.body.clientHeight / 2,
+      id: id,
+    }
+  )
+}
 </script>
 
 <style scoped>

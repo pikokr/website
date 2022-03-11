@@ -2,6 +2,9 @@
   <div class="root">
     <MenuBar />
     <Desktop />
+    <div>
+      <Window v-for="window in windows" :window="window" :key="window.id" />
+    </div>
   </div>
 </template>
 
@@ -21,6 +24,7 @@
 body {
   overflow: hidden;
   font-family: Cafe24Dongdong, sans-serif;
+  user-select: none;
 }
 </style>
 <style scoped>
@@ -29,11 +33,11 @@ body {
   background: #2d81ff;
 }
 </style>
-<script>
-import Desktop from './components/Desktop.vue'
+<script setup lang="ts">
 import MenuBar from './components/MenuBar.vue'
+import Desktop from './components/Desktop.vue'
+import { useMainStore } from './store'
+import Window from './components/Window.vue'
 
-export default {
-  components: { MenuBar, Desktop },
-}
+const { windows } = useMainStore()
 </script>

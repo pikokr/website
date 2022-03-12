@@ -82,7 +82,7 @@ const drag = (e: MouseEvent) => {
     document.body.clientWidth - app.width / 2
   )
   window.y = Math.min(
-    Math.max(160, window.y - pos2),
+    Math.max(app.height / 2 + 20 + 48, window.y - pos2),
     document.body.clientHeight - (app.height / 2 + 20)
   )
 }

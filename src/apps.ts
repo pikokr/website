@@ -26,11 +26,12 @@ export const apps = [
     height: 400,
     content: async () => (await import('./windows/Projects.vue')).default,
   },
-  // {
-  //   name: 'Contact',
-  //   title: 'Contact',
-  //   icon: ['fas', 'envelope'],
-  //   width: 100,
-  //   height: 100,
-  // },
+  {
+    name: 'Contact',
+    title: 'Contact',
+    icon: ['fas', 'envelope'],
+    width: 300,
+    height: 150,
+    content: async () => (await import('./windows/Contact.vue')).default,
+  },
 ] as Window[]

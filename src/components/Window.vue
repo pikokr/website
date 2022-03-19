@@ -2,10 +2,8 @@
   <div
     :style="{
       'pointer-events': 'all',
-      position: 'fixed',
       left: `${win.x}px`,
       top: `${win.y}px`,
-      transform: 'translate(-50%, -50%)',
     }"
     @mousedown="click"
     class="window"
@@ -16,13 +14,17 @@
       </div>
       <div class="title">{{ app.title }}</div>
     </div>
+    <div class="titleBar__mobile">
+      <font-awesome-icon @click="closeWindow" :icon="['fas', 'chevron-left']" />
+      <div class="flex-grow text-center">{{ app.title }}</div>
+    </div>
     <div
       :style="{
         width: `${app.width}px`,
         height: `${app.height}px`,
         maxWidth: '100vw',
       }"
-      class="overflow-y-auto"
+      class="overflow-y-auto window-content"
     >
       <Suspense>
         <WindowContent :content="app.content" />
@@ -125,7 +127,33 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 .window {
-  @apply bg-white shadow-2xl text-black rounded-xl overflow-hidden;
+  transform: translate(-50%, -50%);
+  @apply bg-white shadow-2xl text-black rounded-xl overflow-hidden flex flex-col;
+  position: fixed;
+  @media (max-width: 768px) {
+    left: 0 !important;
+    top: 0 !important;
+    transform: unset;
+    border-radius: 0 !important;
+    width: 100%;
+    height: 100%;
+    .titleBar {
+      display: none !important;
+    }
+    .titleBar__mobile {
+      display: flex !important;
+    }
+    .window-content {
+      width: 100vw !important;
+    }
+  }
+  .window-content {
+    flex-grow: 1;
+  }
+  .titleBar__mobile {
+    @apply p-4 border-b items-center;
+    display: none;
+  }
   .titleBar {
     height: 40px;
     display: flex;

@@ -3,8 +3,8 @@
     :style="{
       'pointer-events': 'all',
       position: 'fixed',
-      left: `${window.x}px`,
-      top: `${window.y}px`,
+      left: `${win.x}px`,
+      top: `${win.y}px`,
       transform: 'translate(-50%, -50%)',
     }"
     @mousedown="click"
@@ -20,6 +20,7 @@
       :style="{
         width: `${app.width}px`,
         height: `${app.height}px`,
+        maxWidth: '100vw',
       }"
       class="overflow-y-auto"
     >
@@ -43,14 +44,15 @@ import { useMainStore, WindowData } from '../store'
 import { apps } from '../apps'
 import { storeToRefs } from 'pinia'
 import WindowContent from './WindowContent.vue'
+import { onMounted, onUnmounted } from 'vue'
 
-const { window } = defineProps<{ window: WindowData }>()
+const { win } = defineProps<{ win: WindowData }>()
 
 const store = useMainStore()
 
 const { windows } = storeToRefs(store)
 
-const app = apps[window.id]
+const app = apps[win.id]
 
 let pos1 = 0,
   pos2 = 0,
@@ -58,7 +60,7 @@ let pos1 = 0,
   pos4 = 0
 
 const click = () => {
-  const idx = windows.value.findIndex((x) => x.id === window.id)
+  const idx = windows.value.findIndex((x) => x.id === win.id)
   const data = windows.value.splice(idx, 1)[0]
   windows.value.push(data)
 }
@@ -77,12 +79,12 @@ const drag = (e: MouseEvent) => {
   pos2 = pos4 - e.clientY
   pos3 = e.clientX
   pos4 = e.clientY
-  window.x = Math.min(
-    Math.max(app.width / 2, window.x - pos1),
+  win.x = Math.min(
+    Math.max(app.width / 2, win.x - pos1),
     document.body.clientWidth - app.width / 2
   )
-  window.y = Math.min(
-    Math.max(app.height / 2 + 20 + 48, window.y - pos2),
+  win.y = Math.min(
+    Math.max(app.height / 2 + 20 + 48, win.y - pos2),
     document.body.clientHeight - (app.height / 2 + 20)
   )
 }
@@ -92,10 +94,33 @@ const closeDrag = () => {
 }
 const closeWindow = () => {
   windows.value.splice(
-    windows.value.findIndex((x) => x.id === window.id),
+    windows.value.findIndex((x) => x.id === win.id),
     1
   )
 }
+
+const handleResize = () => {
+  if (app.width < window.innerWidth) {
+    win.x = Math.min(
+      Math.max(app.width / 2, win.x - pos1),
+      document.body.clientWidth - window.innerWidth / 2
+    )
+  }
+  if (app.height < win.y + app.height) {
+    win.y = Math.min(
+      Math.max(window.innerHeight / 2 + 20 + 48),
+      document.body.clientHeight - (app.height / 2 + 20)
+    )
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
 </script>
 
 <style scoped lang="scss">

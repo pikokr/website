@@ -3,7 +3,7 @@
     <MenuBar />
     <Desktop />
     <div>
-      <Window v-for="window in windows" :window="window" :key="window.id" />
+      <Window v-for="window in windows" :win="window" :key="window.id" />
     </div>
   </div>
 </template>

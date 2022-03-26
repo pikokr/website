@@ -13,14 +13,14 @@
           ref="wave"
           draggable="false"
           class="w-12 h-12"
-          alt="🖖"
-          src="https://twemoji.maxcdn.com/v/14.0.1/72x72/1f596.png"
+          alt="👋"
+          src="https://twemoji.maxcdn.com/v/14.0.1/72x72/1f44b.png"
         />
       </div>
-      <div ref="scrollHint" class="hidden">
+      <div ref="scrollHint">
         <div
           ref="scrollText"
-          class="title flex text-4xl items-center font-bold"
+          class="title flex text-2xl items-center font-bold mt-2"
         >
           <span
             v-for="[i, x] in Object.entries('Please Scroll Down')"
@@ -79,34 +79,24 @@ export default Vue.extend({
     )
     gsap.delayedCall(2, () => {
       gsap
-        .to(this.$refs.title as HTMLDivElement, {
-          opacity: 0,
-          y: '-100%',
-          duration: 1,
-        })
+        .fromTo(
+          (this.$refs.scrollText as HTMLDivElement).children,
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, stagger: 0.05, ease: Back.easeOut }
+        )
         .then(() => {
-          ;(this.$refs.title as HTMLDivElement).style.display = 'none'
-          ;(this.$refs.scrollHint as HTMLDivElement).style.display = 'block'
           gsap
             .fromTo(
-              (this.$refs.scrollText as HTMLDivElement).children,
-              { opacity: 0, y: 40 },
-              { opacity: 1, y: 0, stagger: 0.05, ease: Back.easeOut }
+              this.$refs.scrollIcon as HTMLDivElement,
+              { opacity: 0, y: 0 },
+              { opacity: 1, y: 10 }
             )
             .then(() => {
-              gsap
-                .fromTo(
-                  this.$refs.scrollIcon as HTMLDivElement,
-                  { opacity: 0, y: 0 },
-                  { opacity: 1, y: 10 }
-                )
-                .then(() => {
-                  gsap.fromTo(
-                    this.$refs.scrollIcon as HTMLDivElement,
-                    { y: 10 },
-                    { y: 0, yoyo: true, repeat: -1 }
-                  )
-                })
+              gsap.fromTo(
+                this.$refs.scrollIcon as HTMLDivElement,
+                { y: 10 },
+                { y: 0, yoyo: true, repeat: -1 }
+              )
             })
         })
     })

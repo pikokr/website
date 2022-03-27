@@ -110,7 +110,6 @@ export default Vue.extend({
         top: 0,
         scrollTrigger: {
           scrub: 1,
-          markers: true,
           trigger: this.$refs.container as HTMLDivElement,
           start: 'top top',
           end: 'bottom center',

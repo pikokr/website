@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-const discordUser = (await (await fetch('https://api.lanyard.rest/v1/users/628595345798201355')).json()).discord_user
+const discordUser = (await (await fetch('https://api.lanyard.rest/v1/users/628595345798201355')).json()).data.discord_user
 </script>
 
 <style scoped></style>

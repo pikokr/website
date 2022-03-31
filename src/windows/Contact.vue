@@ -25,12 +25,14 @@
         rel="noreferrer"
       >
         <font-awesome-icon :icon="['fab', 'discord']" />
-        <span>파링#3115</span>
+        <span>{{discordUser.username}}#{{discordUser.discriminator}}</span>
       </a>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const discordUser = (await (await fetch('https://api.lanyard.rest/v1/users/628595345798201355')).json()).discord_user
+</script>
 
 <style scoped></style>
